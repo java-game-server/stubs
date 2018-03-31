@@ -1,36 +1,32 @@
 package com.apporelbotna.gameserver.stubs;
 
-public class Match
+import org.springframework.hateoas.Identifiable;
+
+public class Match implements Identifiable<Integer>
 {
-	private int id;
+	private Integer id;
 	private String emailUser;
 	private int idGame;
 	private float gameLenght;
 	private int puntuation;
 
 	public Match(
-						int id,
 						String emailUser,
 						int idGame,
 						float gameLenght,
 						int puntuation)
 	{
 		super();
-		this.id = id;
 		this.emailUser = emailUser;
 		this.idGame = idGame;
 		this.gameLenght = gameLenght;
 		this.puntuation = puntuation;
 	}
 
-	public int getId()
+	@Override
+	public Integer getId()
 	{
 		return id;
-	}
-
-	public void setId(int id)
-	{
-		this.id = id;
 	}
 
 	public String getEmailUser()
@@ -72,5 +68,4 @@ public class Match
 	{
 		this.puntuation = puntuation;
 	}
-
 }

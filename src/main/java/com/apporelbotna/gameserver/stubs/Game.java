@@ -2,7 +2,7 @@ package com.apporelbotna.gameserver.stubs;
 
 public class Game
 {
-	private int id;
+	private Integer id;
 	private String name;
 	private String description;
 
@@ -13,7 +13,7 @@ public class Game
 		this.name = name;
 	}
 
-	public Game(int id, String name, String description)
+	public Game(Integer id, String name, String description)
 	{
 		super();
 		this.id = id;
@@ -21,15 +21,6 @@ public class Game
 		this.description = description;
 	}
 
-	public int getId()
-	{
-		return id;
-	}
-
-	public void setId(int id)
-	{
-		this.id = id;
-	}
 
 	public String getName()
 	{
@@ -56,7 +47,4 @@ public class Game
 	{
 		return "id= " + id + ", name= " + name + ", description= " + description;
 	}
-
-
-
 }
