@@ -3,7 +3,9 @@ package com.apporelbotna.gameserver.stubs;
 import java.util.ArrayList;
 import java.util.List;
 
-public class User
+import org.springframework.hateoas.Identifiable;
+
+public class User implements Identifiable<String>
 {
 	private String email;
 	private String name;
@@ -31,16 +33,6 @@ public class User
 		this.name = name;
 		this.tokens = new ArrayList<>();
 		this.games = games;
-	}
-
-	public String getEmail()
-	{
-		return email;
-	}
-
-	public void setEmail(String email)
-	{
-		this.email = email;
 	}
 
 	public String getName()
@@ -94,6 +86,10 @@ public class User
 		return "email= " + email + ", name= " + name + ", tokens=" + tokens + "\r\n games=" + games + "]";
 	}
 
-
+	@Override
+	public String getId()
+	{
+		return email;
+	}
 
 }
