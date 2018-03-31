@@ -3,8 +3,8 @@ package com.apporelbotna.gameserver.stubs;
 import java.util.UUID;
 
 /**
- * The objective of this class it's provide the first security.
- * Preventing the user information traveling by Json WebService.
+ * The objective of this class it's provide the first security. Preventing the
+ * user information traveling by Json WebService.
  */
 public class Token
 {
@@ -20,12 +20,18 @@ public class Token
 		return tokenName;
 	}
 
+	public void setTokenName(String tokenName)
+	{
+		this.tokenName = tokenName;
+	}
+
 	/**
-	 * Apply and algorithm to create new token.
+	 * Apply an algorithm to create a new token.
 	 *
-	 * @return the token generate
+	 * @return The generated token
 	 */
-	private String generateToken() {
+	private String generateToken()
+	{
 		String randomToken = UUID.randomUUID().toString();
 		return randomToken.replace("-", "");
 	}
@@ -35,6 +41,5 @@ public class Token
 	{
 		return tokenName;
 	}
-
 
 }

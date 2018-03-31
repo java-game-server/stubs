@@ -1,6 +1,8 @@
 package com.apporelbotna.gameserver.stubs;
 
-public class Game
+import org.springframework.hateoas.Identifiable;
+
+public class Game implements Identifiable<Integer>
 {
 	private Integer id;
 	private String name;
@@ -21,6 +23,11 @@ public class Game
 		this.description = description;
 	}
 
+	@Override
+	public Integer getId()
+	{
+		return id;
+	}
 
 	public String getName()
 	{
@@ -47,4 +54,6 @@ public class Game
 	{
 		return "id= " + id + ", name= " + name + ", description= " + description;
 	}
+
+
 }
