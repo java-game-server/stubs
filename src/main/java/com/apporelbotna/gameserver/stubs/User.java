@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonInclude(Include.NON_NULL)
 public class User implements Identifiable<String>
 {
-    @JsonProperty("email")
+	@JsonProperty("email")
 	private String email;
 
 	private String name;
@@ -25,7 +25,9 @@ public class User implements Identifiable<String>
 
 	}
 
-	public User(String email, String name)
+	public User(
+				String email,
+				String name)
 	{
 		this.email = email;
 		this.name = name;
@@ -33,7 +35,10 @@ public class User implements Identifiable<String>
 		this.games = new ArrayList<>();
 	}
 
-	public User(String email, String name, List<Game> games)
+	public User(
+				String email,
+				String name,
+				List<Game> games)
 	{
 		this.email = email;
 		this.name = name;
@@ -50,10 +55,10 @@ public class User implements Identifiable<String>
 	}
 
 	@JsonProperty("email")
-	public void setEmail(String email) {
+	public void setEmail(String email)
+	{
 		this.email = email;
 	}
-
 
 	public String getName()
 	{
@@ -109,6 +114,11 @@ public class User implements Identifiable<String>
 	public String toString()
 	{
 		return "email= " + email + ", name= " + name + ", tokens=" + tokens + "\r\n games=" + games + "]";
+	}
+
+	public boolean hasToken(Token token)
+	{
+		return tokens.contains(token);
 	}
 
 }
