@@ -5,9 +5,17 @@ import java.util.List;
 
 import org.springframework.hateoas.Identifiable;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@JsonInclude(Include.NON_NULL)
 public class User implements Identifiable<String>
 {
+    @JsonProperty("email")
 	private String email;
+
 	private String name;
 	private List<Token> tokens;
 	private List<Game> games;
@@ -19,7 +27,6 @@ public class User implements Identifiable<String>
 
 	public User(String email, String name)
 	{
-		super();
 		this.email = email;
 		this.name = name;
 		this.tokens = new ArrayList<>();
@@ -28,12 +35,25 @@ public class User implements Identifiable<String>
 
 	public User(String email, String name, List<Game> games)
 	{
-		super();
 		this.email = email;
 		this.name = name;
 		this.tokens = new ArrayList<>();
 		this.games = games;
 	}
+
+	@JsonProperty("email")
+	@JsonGetter
+	@Override
+	public String getId()
+	{
+		return email;
+	}
+
+	@JsonProperty("email")
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 
 	public String getName()
 	{
@@ -50,9 +70,19 @@ public class User implements Identifiable<String>
 		this.games = games;
 	}
 
-	public List<Token> getToken()
+	public List<Game> getGames()
+	{
+		return games;
+	}
+
+	public List<Token> getTokens()
 	{
 		return tokens;
+	}
+
+	public void setTokens(List<Token> tokens)
+	{
+		this.tokens = tokens;
 	}
 
 	/**
@@ -63,11 +93,6 @@ public class User implements Identifiable<String>
 	public void addToken(Token tokenToAdd)
 	{
 		tokens.add(tokenToAdd);
-	}
-
-	public List<Game> getGames()
-	{
-		return games;
 	}
 
 	/**
@@ -84,16 +109,6 @@ public class User implements Identifiable<String>
 	public String toString()
 	{
 		return "email= " + email + ", name= " + name + ", tokens=" + tokens + "\r\n games=" + games + "]";
-	}
-
-	@Override
-	public String getId()
-	{
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
 	}
 
 }
