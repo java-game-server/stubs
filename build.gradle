@@ -1,4 +1,5 @@
 plugins {
+	id 'maven'
     id 'net.ltgt.apt' version '0.10'
     id 'io.franzbecker.gradle-lombok' version '1.11'
     id 'java'
