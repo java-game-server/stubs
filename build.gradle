@@ -7,6 +7,10 @@ plugins {
     id "io.spring.dependency-management" version "1.0.4.RELEASE"
 }
 
+jar {
+	enabled = true
+}
+
 repositories {
     jcenter()
 }
