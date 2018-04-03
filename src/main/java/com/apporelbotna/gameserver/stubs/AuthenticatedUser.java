@@ -55,4 +55,9 @@ public class AuthenticatedUser
 	{
 		return token;
 	}
+
+	public String getEmail()
+	{
+		return user.getEmail();
+	}
 }

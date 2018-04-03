@@ -8,19 +8,19 @@ public class Match implements Identifiable<Integer>
 	private String emailUser;
 	private int idGame;
 	private float gameLenght;
-	private int puntuation;
+	private int score;
 
 	public Match(
 						String emailUser,
 						int idGame,
 						float gameLenght,
-						int puntuation)
+						int score)
 	{
 		super();
 		this.emailUser = emailUser;
 		this.idGame = idGame;
 		this.gameLenght = gameLenght;
-		this.puntuation = puntuation;
+		this.score = score;
 	}
 
 	@Override
@@ -59,13 +59,13 @@ public class Match implements Identifiable<Integer>
 		this.gameLenght = gameLenght;
 	}
 
-	public int getPuntuation()
+	public int getScore()
 	{
-		return puntuation;
+		return score;
 	}
 
-	public void setPuntuation(int puntuation)
+	public void setScore(int score)
 	{
-		this.puntuation = puntuation;
+		this.score = score;
 	}
 }

@@ -7,6 +7,8 @@ public class Game implements Identifiable<Integer>
 	private Integer id;
 	private String name;
 	private String description;
+	private String executableName;
+	private String imgUri;
 
 	public Game(int id, String name)
 	{
@@ -49,11 +51,24 @@ public class Game implements Identifiable<Integer>
 		this.description = description;
 	}
 
+	public String getExecutableName()
+	{
+		return executableName;
+	}
+
+	public String getImgUri()
+	{
+		return imgUri;
+	}
+
+	public void setImgUri(String imgUri)
+	{
+		this.imgUri = imgUri;
+	}
+
 	@Override
 	public String toString()
 	{
 		return "id= " + id + ", name= " + name + ", description= " + description;
 	}
-
-
 }

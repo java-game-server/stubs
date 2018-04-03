@@ -51,6 +51,11 @@ public class User implements Identifiable<String>
 		return email;
 	}
 
+	public String getEmail()
+	{
+		return getId();
+	}
+
 	@JsonProperty("email")
 	public void setEmail(String email)
 	{
