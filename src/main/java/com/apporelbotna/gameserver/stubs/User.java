@@ -17,7 +17,6 @@ public class User implements Identifiable<String>
 	private String email;
 
 	private String name;
-	private List<Token> tokens;
 	private List<Game> games;
 
 	public User()
@@ -31,7 +30,6 @@ public class User implements Identifiable<String>
 	{
 		this.email = email;
 		this.name = name;
-		this.tokens = new ArrayList<>();
 		this.games = new ArrayList<>();
 	}
 
@@ -42,7 +40,6 @@ public class User implements Identifiable<String>
 	{
 		this.email = email;
 		this.name = name;
-		this.tokens = new ArrayList<>();
 		this.games = games;
 	}
 
@@ -80,26 +77,6 @@ public class User implements Identifiable<String>
 		return games;
 	}
 
-	public List<Token> getTokens()
-	{
-		return tokens;
-	}
-
-	public void setTokens(List<Token> tokens)
-	{
-		this.tokens = tokens;
-	}
-
-	/**
-	 * Add a token to the List of tokens
-	 *
-	 * @param tokenToAdd
-	 */
-	public void addToken(Token tokenToAdd)
-	{
-		tokens.add(tokenToAdd);
-	}
-
 	/**
 	 * Add a game to the List of games
 	 *
@@ -113,12 +90,8 @@ public class User implements Identifiable<String>
 	@Override
 	public String toString()
 	{
-		return "email= " + email + ", name= " + name + ", tokens=" + tokens + "\r\n games=" + games + "]";
+		return "email= " + email + ", name= " + name + "\r\n games=" + games + "]";
 	}
 
-	public boolean hasToken(Token token)
-	{
-		return tokens.contains(token);
-	}
 
 }
