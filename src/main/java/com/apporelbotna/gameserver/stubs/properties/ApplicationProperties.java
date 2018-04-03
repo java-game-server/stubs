@@ -2,18 +2,43 @@ package com.apporelbotna.gameserver.stubs.properties;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.Properties;
-import java.util.logging.Level;
 
-import lombok.Getter;
-import lombok.extern.java.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@Log
+
 public final class ApplicationProperties
 {
-	@Getter private static String version;
-	@Getter private static String name;
+	private static String version;
+	private static String name;
+
+	private static final Logger logger = LoggerFactory.getLogger(ApplicationProperties.class);
+
+	public static String getVersion()
+	{
+		return version;
+	}
+
+	public static String getName()
+	{
+		return name;
+	}
+
+	public static Logger getLogger()
+	{
+		return logger;
+	}
+
+	public static void setVersion(String version)
+	{
+		ApplicationProperties.version = version;
+	}
+
+	public static void setName(String name)
+	{
+		ApplicationProperties.name = name;
+	}
 
 	private ApplicationProperties()
 	{
@@ -34,7 +59,7 @@ public final class ApplicationProperties
 		}
 		catch (IOException e)
 		{
-			log.log(Level.FINER, Arrays.toString(e.getStackTrace()), e);
+			logger.error(e.getMessage());
 		}
 	}
 }
