@@ -6,6 +6,12 @@ public class RankingPointsTO
 	private int pos;
 	private int points;
 
+
+	public RankingPointsTO()
+	{
+		super();
+	}
+
 	public RankingPointsTO(String email, int pos, int points)
 	{
 		super();
