@@ -6,6 +6,11 @@ public class UserWrapper
 	private User user;
 	private Token token;
 
+	public UserWrapper()
+	{
+		super();
+	}
+
 	public UserWrapper(User user,	Token token)
 	{
 		super();
@@ -46,19 +51,29 @@ public class UserWrapper
 	public boolean equals(Object obj)
 	{
 		if (this == obj)
+		{
 			return true;
+		}
 		if (obj == null)
+		{
 			return false;
+		}
 		if (getClass() != obj.getClass())
+		{
 			return false;
+		}
 		UserWrapper other = (UserWrapper)obj;
 		if (user == null)
 		{
 			if (other.user != null)
+			{
 				return false;
+			}
 		}
 		else if (!user.equals(other.user))
+		{
 			return false;
+		}
 		return true;
 	}
 }
