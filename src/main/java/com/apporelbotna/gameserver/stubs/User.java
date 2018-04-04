@@ -5,11 +5,14 @@ import java.util.List;
 
 import org.springframework.hateoas.Identifiable;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(Include.NON_NULL)
 public class User implements Identifiable<String>
 {
@@ -41,8 +44,7 @@ public class User implements Identifiable<String>
 		this.games = games;
 	}
 
-	@JsonProperty("email")
-	@JsonGetter
+	@JsonIgnore
 	@Override
 	public String getId()
 	{
@@ -54,7 +56,6 @@ public class User implements Identifiable<String>
 		return getId();
 	}
 
-	@JsonProperty("email")
 	public void setEmail(String email)
 	{
 		this.email = email;
