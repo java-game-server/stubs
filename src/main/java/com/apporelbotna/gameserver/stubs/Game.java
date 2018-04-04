@@ -10,23 +10,16 @@ public class Game implements Identifiable<Integer>
 	private String executableName;
 	private String imgUri;
 
-
-
 	public Game()
 	{
 		super();
 	}
 
-
-
-	public Game(
-				Integer id)
+	public Game(Integer id)
 	{
 		super();
 		this.id = id;
 	}
-
-
 
 	public Game(int id, String name)
 	{
@@ -41,6 +34,15 @@ public class Game implements Identifiable<Integer>
 		this.id = id;
 		this.name = name;
 		this.description = description;
+	}
+
+	public Game(Integer id, String name, String description, String executableName, String imgUri)
+	{
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.executableName = executableName;
+		this.imgUri = imgUri;
 	}
 
 	@Override
