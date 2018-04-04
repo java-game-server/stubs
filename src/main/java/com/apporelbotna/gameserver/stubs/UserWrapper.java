@@ -4,20 +4,15 @@ package com.apporelbotna.gameserver.stubs;
 public class UserWrapper
 {
 	User user;
-	String password;
-
-	public UserWrapper()
-	{
-
-	}
+	Token token;
 
 	public UserWrapper(
 						User user,
-						String password)
+						Token token)
 	{
 		super();
 		this.user = user;
-		this.password = password;
+		this.token = token;
 	}
 
 	public User getUser()
@@ -25,9 +20,9 @@ public class UserWrapper
 		return user;
 	}
 
-	public String getPassword()
+	public Token getToken()
 	{
-		return password;
+		return token;
 	}
 
 	public void setUser(User user)
@@ -35,9 +30,8 @@ public class UserWrapper
 		this.user = user;
 	}
 
-	public void setPassword(String password)
+	public void setToken(Token token)
 	{
-		this.password = password;
+		this.token = token;
 	}
-
 }
