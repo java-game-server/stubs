@@ -10,6 +10,24 @@ public class Game implements Identifiable<Integer>
 	private String executableName;
 	private String imgUri;
 
+
+
+	public Game()
+	{
+		super();
+	}
+
+
+
+	public Game(
+				Integer id)
+	{
+		super();
+		this.id = id;
+	}
+
+
+
 	public Game(int id, String name)
 	{
 		super();
