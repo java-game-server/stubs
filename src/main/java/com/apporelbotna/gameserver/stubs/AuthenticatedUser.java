@@ -31,7 +31,10 @@ public class AuthenticatedUser
 	public static AuthenticatedUser create(User user, Token token)
 	{
 		if(instance == null)
-			return new AuthenticatedUser(user, token);
+		{
+			instance = new AuthenticatedUser(user, token);
+			return instance;
+		}
 		logger.error(MULTIPLE_INSTANCES);
 		throw new UnsupportedOperationException(MULTIPLE_INSTANCES);
 	}
