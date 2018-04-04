@@ -21,22 +21,20 @@ public class User implements Identifiable<String>
 
 	public User()
 	{
-
+		this(null, null, new ArrayList<>());
 	}
 
-	public User(
-				String email,
-				String name)
+	public User(String email)
 	{
-		this.email = email;
-		this.name = name;
-		this.games = new ArrayList<>();
+		this(email, null, new ArrayList<>());
 	}
 
-	public User(
-				String email,
-				String name,
-				List<Game> games)
+	public User(String email, String name)
+	{
+		this(email, name, new ArrayList<>());
+	}
+
+	public User(String email, String name, List<Game> games)
 	{
 		this.email = email;
 		this.name = name;
@@ -93,10 +91,37 @@ public class User implements Identifiable<String>
 	}
 
 	@Override
+	public int hashCode()
+	{
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User)obj;
+		if (email == null)
+		{
+			if (other.email != null)
+				return false;
+		}
+		else if (!email.equals(other.email))
+			return false;
+		return true;
+	}
+
+	@Override
 	public String toString()
 	{
 		return "email= " + email + ", name= " + name + "\r\n games=" + games + "]";
 	}
-
-
 }

@@ -7,19 +7,19 @@ public class Match implements Identifiable<Integer>
 	private Integer id;
 	private String emailUser;
 	private int idGame;
-	private float gameLenght;
+	private float gameTimeInSeconds;
 	private int score;
 
 	public Match(
 						String emailUser,
 						int idGame,
-						float gameLenght,
+						float gameTimeInSeconds,
 						int score)
 	{
 		super();
 		this.emailUser = emailUser;
 		this.idGame = idGame;
-		this.gameLenght = gameLenght;
+		this.gameTimeInSeconds = gameTimeInSeconds;
 		this.score = score;
 	}
 
@@ -49,14 +49,14 @@ public class Match implements Identifiable<Integer>
 		this.idGame = idGame;
 	}
 
-	public float getGameLenght()
+	public float getGameTimeInSeconds()
 	{
-		return gameLenght;
+		return gameTimeInSeconds;
 	}
 
-	public void setGameLenght(float gameLenght)
+	public void setGameTimeInSeconds(long gameTimeInSeconds)
 	{
-		this.gameLenght = gameLenght;
+		this.gameTimeInSeconds = gameTimeInSeconds;
 	}
 
 	public int getScore()
