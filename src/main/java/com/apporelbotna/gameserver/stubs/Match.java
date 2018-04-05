@@ -10,6 +10,10 @@ public class Match implements Identifiable<Integer>
 	private float gameTimeInSeconds;
 	private int score;
 
+	public Match() {
+		super();
+	}
+
 	public Match(
 						String emailUser,
 						int idGame,
