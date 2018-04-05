@@ -1,6 +1,6 @@
 package com.apporelbotna.gameserver.stubs;
 
-//TODO cambiar nombre por uno que refleje mejor que es un objeto que solo sirve para cuando haces log int
+// TODO cambiar nombre por uno que refleje mejor que es un objeto que solo sirve para cuando haces log int
 public class UserWrapper
 {
 	private User user;
