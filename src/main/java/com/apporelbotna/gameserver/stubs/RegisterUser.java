@@ -10,9 +10,7 @@ public class RegisterUser
 	super();
     }
 
-    public RegisterUser(
-			User user,
-			String password)
+    public RegisterUser(User user, String password)
     {
 	super();
 	this.user = user;

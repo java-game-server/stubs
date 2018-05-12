@@ -34,8 +34,7 @@ public class AuthenticatedUser
     {
 	if ( instance == null )
 	{
-	    instance = new AuthenticatedUser( user,
-					      token );
+	    instance = new AuthenticatedUser( user, token );
 	    return instance;
 	}
 	logger.error( MULTIPLE_INSTANCES );

@@ -15,8 +15,7 @@ public class Token
 
     }
 
-    public Token(
-		 String tokenName)
+    public Token(String tokenName)
     {
 	super();
 	this.tokenName = tokenName;

@@ -25,32 +25,20 @@ public class User implements Identifiable< String >
 
     public User()
     {
-	this( null,
-	      null,
-	      new ArrayList<>() );
+	this( null, null, new ArrayList<>() );
     }
 
-    public User(
-		String email)
+    public User(String email)
     {
-	this( email,
-	      null,
-	      new ArrayList<>() );
+	this( email, null, new ArrayList<>() );
     }
 
-    public User(
-		String email,
-		String name)
+    public User(String email, String name)
     {
-	this( email,
-	      name,
-	      new ArrayList<>() );
+	this( email, name, new ArrayList<>() );
     }
 
-    public User(
-		String email,
-		String name,
-		List< Game > games)
+    public User(String email, String name, List< Game > games)
     {
 	this.email = email;
 	this.name = name;

@@ -16,26 +16,20 @@ public class Game implements Identifiable< Integer >
 	super();
     }
 
-    public Game(
-		Integer id)
+    public Game(Integer id)
     {
 	super();
 	this.id = id;
     }
 
-    public Game(
-		int id,
-		String name)
+    public Game(int id, String name)
     {
 	super();
 	this.id = id;
 	this.name = name;
     }
 
-    public Game(
-		Integer id,
-		String name,
-		String description)
+    public Game(Integer id, String name, String description)
     {
 	super();
 	this.id = id;
@@ -43,12 +37,7 @@ public class Game implements Identifiable< Integer >
 	this.description = description;
     }
 
-    public Game(
-		Integer id,
-		String name,
-		String description,
-		String executableName,
-		String imgUri)
+    public Game(Integer id, String name, String description, String executableName, String imgUri)
     {
 	this.id = id;
 	this.name = name;

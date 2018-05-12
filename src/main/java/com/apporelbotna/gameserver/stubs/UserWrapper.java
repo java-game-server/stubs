@@ -11,9 +11,7 @@ public class UserWrapper
 	super();
     }
 
-    public UserWrapper(
-		       User user,
-		       Token token)
+    public UserWrapper(User user, Token token)
     {
 	super();
 	this.user = user;

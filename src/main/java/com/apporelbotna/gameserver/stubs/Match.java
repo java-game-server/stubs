@@ -15,11 +15,7 @@ public class Match implements Identifiable< Integer >
 	super();
     }
 
-    public Match(
-		 String emailUser,
-		 int idGame,
-		 float gameTimeInSeconds,
-		 int score)
+    public Match(String emailUser, int idGame, float gameTimeInSeconds, int score)
     {
 	super();
 	this.emailUser = emailUser;

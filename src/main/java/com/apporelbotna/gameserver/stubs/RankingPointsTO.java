@@ -11,10 +11,7 @@ public class RankingPointsTO
 	super();
     }
 
-    public RankingPointsTO(
-			   String email,
-			   int pos,
-			   int points)
+    public RankingPointsTO(String email, int pos, int points)
     {
 	super();
 	this.email = email;
