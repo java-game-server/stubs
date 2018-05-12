@@ -11,118 +11,160 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(Include.NON_NULL)
-public class User implements Identifiable<String>
+public class User implements Identifiable< String >
 {
-	@JsonProperty("email")
-	private String email;
+    @JsonProperty("email")
+    private String email;
 
-	private String name;
-	private List<Game> games;
+    private String name;
+    private float gold;
+    private String rol;
+    private List< Game > games;
 
-	public User()
+    public User()
+    {
+	this( null,
+	      null,
+	      new ArrayList<>() );
+    }
+
+    public User(
+		String email)
+    {
+	this( email,
+	      null,
+	      new ArrayList<>() );
+    }
+
+    public User(
+		String email,
+		String name)
+    {
+	this( email,
+	      name,
+	      new ArrayList<>() );
+    }
+
+    public User(
+		String email,
+		String name,
+		List< Game > games)
+    {
+	this.email = email;
+	this.name = name;
+	this.games = games;
+    }
+
+    @JsonIgnore
+    @Override
+    public String getId()
+    {
+	return email;
+    }
+
+    public String getEmail()
+    {
+	return getId();
+    }
+
+    public void setEmail(String email)
+    {
+	this.email = email;
+    }
+
+    public String getName()
+    {
+	return name;
+    }
+
+    public void setName(String name)
+    {
+	this.name = name;
+    }
+
+    public void setGames(List< Game > games)
+    {
+	this.games = games;
+    }
+
+    public List< Game > getGames()
+    {
+	return games;
+    }
+
+    public float getGold()
+    {
+	return gold;
+    }
+
+    public void setGold(float gold)
+    {
+	this.gold = gold;
+    }
+
+    public String getRol()
+    {
+	return rol;
+    }
+
+    public void setRol(String rol)
+    {
+	this.rol = rol;
+    }
+
+    /**
+     * Add a game to the List of games
+     *
+     * @param gameToAdd
+     */
+    public void addGame(Game gameToAdd)
+    {
+	games.add( gameToAdd );
+    }
+
+    @Override
+    public int hashCode()
+    {
+	final int prime = 31;
+	int result = 1;
+	result = prime * result + ( ( email == null ) ? 0 : email.hashCode() );
+	return result;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+	if ( this == obj )
 	{
-		this(null, null, new ArrayList<>());
+	    return true;
 	}
-
-	public User(String email)
+	if ( obj == null )
 	{
-		this(email, null, new ArrayList<>());
+	    return false;
 	}
-
-	public User(String email, String name)
+	if ( getClass() != obj.getClass() )
 	{
-		this(email, name, new ArrayList<>());
+	    return false;
 	}
-
-	public User(String email, String name, List<Game> games)
+	User other = ( User ) obj;
+	if ( email == null )
 	{
-		this.email = email;
-		this.name = name;
-		this.games = games;
-	}
-
-	@JsonIgnore
-	@Override
-	public String getId()
+	    if ( other.email != null )
+	    {
+		return false;
+	    }
+	} else if ( !email.equals( other.email ) )
 	{
-		return email;
+	    return false;
 	}
+	return true;
+    }
 
-	public String getEmail()
-	{
-		return getId();
-	}
-
-	public void setEmail(String email)
-	{
-		this.email = email;
-	}
-
-	public String getName()
-	{
-		return name;
-	}
-
-	public void setName(String name)
-	{
-		this.name = name;
-	}
-
-	public void setGames(List<Game> games)
-	{
-		this.games = games;
-	}
-
-	public List<Game> getGames()
-	{
-		return games;
-	}
-
-	/**
-	 * Add a game to the List of games
-	 *
-	 * @param gameToAdd
-	 */
-	public void addGame(Game gameToAdd)
-	{
-		games.add(gameToAdd);
-	}
-
-	@Override
-	public int hashCode()
-	{
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj)
-	{
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		User other = (User)obj;
-		if (email == null)
-		{
-			if (other.email != null)
-				return false;
-		}
-		else if (!email.equals(other.email))
-			return false;
-		return true;
-	}
-
-	@Override
-	public String toString()
-	{
-		return "email= " + email + ", name= " + name + "\r\n games=" + games + "]";
-	}
+    @Override
+    public String toString()
+    {
+	return "email= " + email + ", name= " + name + "gold" + gold + "rol " + rol + "\r\n games=" + games + "]";
+    }
 }

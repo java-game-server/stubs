@@ -8,34 +8,35 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class Token
 {
-	private String tokenName;
+    private String tokenName;
 
-	public Token()
-	{
+    public Token()
+    {
 
-	}
+    }
 
-	public Token(String tokenName)
-	{
-		super();
-		this.tokenName = tokenName;
-	}
+    public Token(
+		 String tokenName)
+    {
+	super();
+	this.tokenName = tokenName;
+    }
 
-	public void setTokenName(String tokenName)
-	{
-		this.tokenName = tokenName;
-	}
+    public void setTokenName(String tokenName)
+    {
+	this.tokenName = tokenName;
+    }
 
-	@JsonProperty()
-	public String getTokenName()
-	{
-		return tokenName;
-	}
+    @JsonProperty()
+    public String getTokenName()
+    {
+	return tokenName;
+    }
 
-	@Override
-	public String toString()
-	{
-		return tokenName;
-	}
+    @Override
+    public String toString()
+    {
+	return tokenName;
+    }
 
 }
