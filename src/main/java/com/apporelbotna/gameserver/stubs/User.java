@@ -25,24 +25,31 @@ public class User implements Identifiable< String >
 
     public User()
     {
-	this( null, null, new ArrayList<>() );
+	this( null, null, new ArrayList<>(), 0.0f, null );
     }
 
     public User(String email)
     {
-	this( email, null, new ArrayList<>() );
+	this( email, null, new ArrayList<>(), 0.0f, null );
     }
 
     public User(String email, String name)
     {
-	this( email, name, new ArrayList<>() );
+	this( email, name, new ArrayList<>(), 0.0f, null );
     }
 
     public User(String email, String name, List< Game > games)
     {
+	this( email, name, games, 0.0f, null );
+    }
+
+    public User(String email, String name, List< Game > games, float gold, String rol)
+    {
 	this.email = email;
 	this.name = name;
 	this.games = games;
+	this.gold = gold;
+	this.rol = rol;
     }
 
     @JsonIgnore
