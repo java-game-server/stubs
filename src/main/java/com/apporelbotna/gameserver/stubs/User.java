@@ -20,30 +20,30 @@ public class User implements Identifiable< String >
 
     private String name;
     private float gold;
-    private String rol;
+    private UserType rol;
     private List< Game > games;
 
     public User()
     {
-	this( null, null, new ArrayList<>(), 0.0f, null );
+	this( null, null, new ArrayList<>(), 0.0f, UserType.USER );
     }
 
     public User(String email)
     {
-	this( email, null, new ArrayList<>(), 0.0f, null );
+	this( email, null, new ArrayList<>(), 0.0f, UserType.USER );
     }
 
     public User(String email, String name)
     {
-	this( email, name, new ArrayList<>(), 0.0f, null );
+	this( email, name, new ArrayList<>(), 0.0f, UserType.USER );
     }
 
     public User(String email, String name, List< Game > games)
     {
-	this( email, name, games, 0.0f, null );
+	this( email, name, games, 0.0f, UserType.USER );
     }
 
-    public User(String email, String name, List< Game > games, float gold, String rol)
+    public User(String email, String name, List< Game > games, float gold, UserType rol)
     {
 	this.email = email;
 	this.name = name;
@@ -99,12 +99,12 @@ public class User implements Identifiable< String >
 	this.gold = gold;
     }
 
-    public String getRol()
+    public UserType getRol()
     {
 	return rol;
     }
 
-    public void setRol(String rol)
+    public void setRol(UserType rol)
     {
 	this.rol = rol;
     }
