@@ -23,7 +23,7 @@ public enum UserType
 	 * @param userType
 	 * @return the enumType. if can't convert return null
 	 */
-	public UserType convertStringToUserType(String userType) {
+	public static UserType convertStringToUserType(String userType) {
 		for (UserType actualUserType : UserType.values()) {
 			if(actualUserType.getType().equals(userType)) {
 				return actualUserType;
