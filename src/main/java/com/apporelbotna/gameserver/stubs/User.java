@@ -38,6 +38,11 @@ public class User implements Identifiable< String >
 	this( email, name, new ArrayList<>(), 0.0f, UserType.USER );
     }
 
+    public User(String email, String name, float gold, UserType userType )
+    {
+	this( email, name, new ArrayList<>(), gold, userType );
+    }
+
     public User(String email, String name, List< Game > games)
     {
 	this( email, name, games, 0.0f, UserType.USER );
