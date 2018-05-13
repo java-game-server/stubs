@@ -5,15 +5,30 @@ public enum UserType
 	USER("user"),
 	ADMIN("admin");
 
-	private String msg;
+	private String type;
 
-	private UserType(String msg)
+	private UserType(String type)
 	{
-	    this.msg = msg;
+	    this.type = type;
 	}
 
-	public String getMsg()
+	public String getType()
 	{
-	    return msg;
+	    return type;
+	}
+
+	/**
+	 * convert a string to the Enum Type
+	 *
+	 * @param userType
+	 * @return the enumType. if can't convert return null
+	 */
+	public UserType convertStringToUserType(String userType) {
+		for (UserType actualUserType : UserType.values()) {
+			if(actualUserType.getType().equals(userType)) {
+				return actualUserType;
+			}
+		}
+		return null;
 	}
 }
