@@ -1,5 +1,8 @@
 package com.apporelbotna.gameserver.stubs;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.hateoas.Identifiable;
 
 public class Game implements Identifiable< Integer >
@@ -10,6 +13,7 @@ public class Game implements Identifiable< Integer >
     private String executableName;
     private String imgUri;
     private float price;
+    private List<String> genres;
 
     public Game()
     {
@@ -18,25 +22,30 @@ public class Game implements Identifiable< Integer >
 
     public Game(Integer id)
     {
-	this(id, null, null, null, null, 0.0f);
+	this(id, null, null, null, null, 0.0f, new ArrayList<>());
     }
 
     public Game(int id, String name)
     {
-	this(id, name, null, null, null, 0.0f);
+	this(id, name, null, null, null, 0.0f ,  new ArrayList<>());
     }
 
     public Game(Integer id, String name, String description)
     {
-	this(id, name, description, null, null, 0.0f);
+	this(id, name, description, null, null, 0.0f,  new ArrayList<>());
     }
 
     public Game(Integer id, String name, String description, String executableName, String imgUri)
     {
-	this(id, name, description, executableName, imgUri, 0.0f);
+	this(id, name, description, executableName, imgUri, 0.0f,  new ArrayList<>());
     }
 
-    public Game(Integer id, String name, String description, String executableName, String imgUri ,float price)
+    public Game(Integer id, String name, String description, String executableName, String imgUri, float price)
+    {
+	this(id, name, description, executableName, imgUri, price,  new ArrayList<>());
+    }
+
+    public Game(Integer id, String name, String description, String executableName, String imgUri ,float price, List<String> genres)
     {
 	this.id = id;
 	this.name = name;
@@ -44,6 +53,7 @@ public class Game implements Identifiable< Integer >
 	this.executableName = executableName;
 	this.imgUri = imgUri;
 	this.price = price;
+	this.genres = genres;
     }
 
     @Override
@@ -100,6 +110,16 @@ public class Game implements Identifiable< Integer >
     public void setExecutableName(String executableName)
     {
 	this.executableName = executableName;
+    }
+
+    public List<String> getGenre()
+    {
+        return genres;
+    }
+
+    public void setGenre(List<String> genres)
+    {
+        this.genres = genres;
     }
 
     @Override
