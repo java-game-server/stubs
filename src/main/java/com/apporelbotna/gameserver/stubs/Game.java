@@ -18,32 +18,32 @@ public class Game implements Identifiable< Integer >
 
     public Game(Integer id)
     {
-	super();
-	this.id = id;
+	this(id, null, null, null, null, 0.0f);
     }
 
     public Game(int id, String name)
     {
-	super();
-	this.id = id;
-	this.name = name;
+	this(id, name, null, null, null, 0.0f);
     }
 
     public Game(Integer id, String name, String description)
     {
-	super();
-	this.id = id;
-	this.name = name;
-	this.description = description;
+	this(id, name, description, null, null, 0.0f);
     }
 
     public Game(Integer id, String name, String description, String executableName, String imgUri)
+    {
+	this(id, name, description, executableName, imgUri, 0.0f);
+    }
+
+    public Game(Integer id, String name, String description, String executableName, String imgUri ,float price)
     {
 	this.id = id;
 	this.name = name;
 	this.description = description;
 	this.executableName = executableName;
 	this.imgUri = imgUri;
+	this.price = price;
     }
 
     @Override
