@@ -5,16 +5,16 @@ import java.util.List;
 
 import org.springframework.hateoas.Identifiable;
 
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
-import com.fasterxml.jackson.databind.annotation.JsonNaming;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Game implements Identifiable< Integer >
 {
     private Integer id;
     private String name;
     private String description;
     private String executableName;
+
+    @JsonProperty("img_uri")
     private String imgUri;
     private float price;
     private List<String> genres;
