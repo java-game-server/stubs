@@ -3,12 +3,16 @@ package com.apporelbotna.gameserver.stubs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
 /**
  * A singleton class used to manage user authentication inside an application.
  *
  * @author Jendoliver
  *
  */
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class AuthenticatedUser
 {
 	private static final String NO_INSTANCE = "No AuthenticatedUser was created. HINT: Use create(user, token) before calling getInstance";

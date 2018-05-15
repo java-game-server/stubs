@@ -1,5 +1,9 @@
 package com.apporelbotna.gameserver.stubs;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class RankingPointsTO
 {
     private String email;

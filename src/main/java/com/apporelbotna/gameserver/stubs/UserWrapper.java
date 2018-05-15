@@ -1,6 +1,10 @@
 package com.apporelbotna.gameserver.stubs;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
 // TODO cambiar nombre por uno que refleje mejor que es un objeto que solo sirve para cuando haces log int
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class UserWrapper
 {
     private User user;

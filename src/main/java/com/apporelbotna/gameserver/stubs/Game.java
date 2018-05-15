@@ -5,6 +5,10 @@ import java.util.List;
 
 import org.springframework.hateoas.Identifiable;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Game implements Identifiable< Integer >
 {
     private Integer id;
